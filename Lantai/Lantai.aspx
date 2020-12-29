@@ -11,7 +11,7 @@
     <div>
         <h4>LOKASI LOKER</h4>
         <asp:Label ID="lbl" runat="server">Masukkan no Loker</asp:Label><br />
-        <asp:TextBox ID="txtloker" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtloker" runat="server" onkeypress="return IsNumeric(event);"></asp:TextBox>
         <asp:Button ID="btnSubmit" runat="server" Text="Submit"
           onclick="btnSubmit_Click" />
     
@@ -23,3 +23,16 @@
     </div>
 </body>
 </html>
+
+ <script type="text/javascript">  
+  
+     function IsNumeric(evt)
+        {  
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 32 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }  
+    </script>  
